@@ -1,24 +1,37 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-    // APPROCCIO JAVASCRIPT
-    // NON NECESSARIO USANDO TYPESCRIPT
-    // POTENDO DECIDERE I TIPI DI DATO DURANTE LA FASE DI SVILUPPO
-    // console.log(typeof number1);
-    // if(typeof n1 === 'number' && typeof n2 === 'number') {
-    //     return n1 + n2;
-    // }
 
-    // throw new Error('Hai inserito un tipo di dato errato!')
-    const result = n1 + n2;
-    if(showResult) {
-        console.log(phrase + result)
-    } else {
-        return result
-    }
+// Posso specificare il tipo object
+// Anche usando delle doppie graffe
+
+// const person: {} = {
+//     name: "Gioele",
+//     age: 24
+// };
+
+// const person: {
+//     name: string;
+//     age: number;
+// } = {
+//     name: "Gioele",
+//     age: 24
+// }
+
+// const person: object = {
+//     name: "Gioele",
+//     age: 24
+// };
+
+const person = {
+    name: "Gioele",
+    age: 24,
+    hobbies: ["Gaming", "Cooking"] // string[] => array di stringhe
 }
 
-const number1 = 5;
-const number2 = 7;
-const printResult = true;
-const resultPhrase = "Il risultato è: ";
+let favouriteActivities: string[];
+favouriteActivities = ['Test']
 
-add(number1, number2, printResult, resultPhrase);
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+    console.log(hobby.toLowerCase());
+    // console.log(hobby.map()); Typescript segna un errore, perché map() è una proprietà di array, non di string
+}
