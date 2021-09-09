@@ -1,30 +1,23 @@
-// Posso specificare il tipo object
-// Anche usando delle doppie graffe
-// const person: {} = {
-//     name: "Gioele",
-//     age: 24
-// };
-// const person: {
-//     name: string;
-//     age: number;
-// } = {
-//     name: "Gioele",
-//     age: 24
-// }
-// const person: object = {
-//     name: "Gioele",
-//     age: 24
-// };
-var person = {
-    name: "Gioele",
-    age: 24,
-    hobbies: ["Gaming", "Cooking"] // string[] => array di stringhe
-};
-var favouriteActivities;
-favouriteActivities = ['Test'];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toLowerCase());
-    // console.log(hobby.map()); Typescript segna un errore, perché map() è una proprietà di array, non di string
+function add(n1, n2) {
+    return n1 + n2;
 }
+// Non avendo un return, il return type di questa funzione sara void
+function printNumber(num) {
+    console.log("Result is: " + num);
+}
+function addAndHandle(num1, num2, callback) {
+    var result = num1 + num2;
+    callback(result);
+}
+function printResult(result) {
+    console.log("Callback: " + result);
+}
+var combineValues;
+combineValues = add;
+// combineValues = printNumber;
+// combineValues = 10;
+printNumber(combineValues(40, 50));
+// addAndHandle(10, 20, printResult);
+addAndHandle(10, 20, function (result) {
+    console.log("Callback: " + result);
+});
