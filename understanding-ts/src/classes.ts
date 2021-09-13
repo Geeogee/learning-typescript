@@ -16,7 +16,7 @@ abstract class Department {
         // this.name = n;
 
         // Non è possibile accedere a proprietà e metodi static
-        // Dall'interno di proprietà e metodi non static
+        // all'interno di proprietà e metodi non static
         // utilizzando la parola chiave this.
         // Questo perché il this si riferisce all'istanza creata 
         // basandosi sulla classe e, la proprietà static,
@@ -42,7 +42,7 @@ abstract class Department {
     // Nelle classi che lo ereditano
     // In modo da poter definire un comportamento diverso
     // Per ogni classe che lo eredita
-    // Bisogna aggiungere abstract anche prima del nome della classe 
+    // Bisogna aggiungere abstract anche prima del nome della classe che verrà ereditata
     abstract describe(this: Department): void;
 
     addEmployee(employee: string) {
@@ -99,6 +99,9 @@ class ACDepartment extends Department {
 
     // private usato con il constructor, assicura che venga creata
     // solamente un'istanza del tipo ACDepartment
+    // si potrà accedere infatti al constructor solamente dall'interno della classe
+    // e definendo quindi la logica tramite un metodo
+    // che instanzierà sempre la stessa classe
     private constructor(id: string, reports: string[] = []) {
         super(id, "Accounting")
         this.reports = reports;

@@ -12,7 +12,7 @@ class Department {
         // anche dalle classi che ereditano Department
         this.employees = [];
         // Non è possibile accedere a proprietà e metodi static
-        // Dall'interno di proprietà e metodi non static
+        // all'interno di proprietà e metodi non static
         // utilizzando la parola chiave this.
         // Questo perché il this si riferisce all'istanza creata 
         // basandosi sulla classe e, la proprietà static,
@@ -51,6 +51,9 @@ class ITDepartment extends Department {
 class ACDepartment extends Department {
     // private usato con il constructor, assicura che venga creata
     // solamente un'istanza del tipo ACDepartment
+    // si potrà accedere infatti al constructor solamente dall'interno della classe
+    // e definendo quindi la logica tramite un metodo
+    // che instanzierà sempre la stessa classe
     constructor(id, reports = []) {
         super(id, "Accounting");
         this.reports = reports;
