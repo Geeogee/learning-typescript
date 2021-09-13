@@ -106,7 +106,7 @@
     "node_moudels" //Se non si utilizza exclude, node_modules è escluso di deafult
   ],
   "include": [
-    "src/app.ts"
+    "src/classes.ts"
   ],
   // files funziona come include, la differenza è che non è possibile aggiungere cartelle, ma solo files
   // "files": [
